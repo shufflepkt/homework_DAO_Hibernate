@@ -30,6 +30,6 @@ public class PersonController {
 
     @GetMapping("/persons")
     Optional<Person> getPersonByNameSurname(@RequestParam(name = "name") String name, @RequestParam(name = "surname") String surname) {
-        return personJpaRepository.findAllByKey_NameAndKey_Surname(name, surname);
+        return personJpaRepository.findAllByKey_NameAndKey_Surname(name.toLowerCase(), surname.toLowerCase());
     }
 }
